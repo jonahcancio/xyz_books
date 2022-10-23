@@ -5,7 +5,7 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     logger.info BooksService.new.convert_isbn "They call him Kukulcan" 
-    render json: @books, include: [:publisher]
+    render json: @books
   end
 
   # GET /books/1
