@@ -4,13 +4,13 @@ class BooksController < ApplicationController
   # GET /books
   def index
     @books = Book.all
-
-    render json: @books
+    logger.info BooksService.new.convert_isbn "They call him Kukulcan" 
+    render json: @books, include: [:publisher]
   end
 
   # GET /books/1
   def show
-    render json: @book
+    render json: @book, include: [:publisher]
   end
 
   # POST /books
