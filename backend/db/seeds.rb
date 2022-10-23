@@ -16,19 +16,33 @@ Author.create([
     { first_name: 'Rainer', middle_name: 'Steel', last_name: 'Rike' }
 ])
 
+Publisher.create([
+    { name: 'Paste Magazine' },
+    { name: 'Publishers Weekly' },
+    { name: 'Graywolf Press' },
+    { name: 'McSweeney\'s' }
+])
 
+Book.create(title: 'American Elf', isbn_13: '978-1-891830-85-3', publication_year: 2004, edition: 'Book 2', price: 1000,
+    publisher: Publisher.find_by(name: 'Paste Magazine'),
+    authors: [Author.find_by(first_name: 'Joel'), Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Marguerite')]
+)
+Book.create(title: 'Cosmoknights', isbn_13: '978-1-60309-454-2', publication_year: 2019, edition: 'Book 1', price: 2000,
+    publisher: Publisher.find_by(name: 'Publishers Weekly'),
+    authors: [Author.find_by(first_name: 'Kingsley')]
+)
+Book.create(title: 'Essex County', isbn_13: '978-1-60309-038-4', publication_year: 1990, price: 500,
+    publisher: Publisher.find_by(name: 'Graywolf Press'),
+    authors: [Author.find_by(first_name: 'Kingsley')]
+)
+Book.create(title: 'Hey, Mister (Vol 1)', isbn_13: '978-1-891830-02-0', publication_year: 2000, edition: 'After School Special', price: 1200,
+    publisher: Publisher.find_by(name: 'Graywolf Press'),
+    authors: [Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Fannie'), Author.find_by(first_name: 'Camille')]
+)
+Book.create(title: 'The Underwater Welder', isbn_13: '978-1-60309-398-9', publication_year: 2022, price: 3000,
+    publisher: Publisher.find_by(name: 'McSweeney\'s'),
+    authors: [Author.find_by(first_name: 'Rainer')]
+)
 
-p = Publisher.create(name: 'Paste Magazine')
-p.books.create(title: 'American Elf', isbn_13: '978-1-891830-85-3', publication_year: 2004, edition: 'Book 2', price: 1000)
-
-p = Publisher.create(name: 'Publishers Weekly')
-p.books.create(title: 'Cosmoknights', isbn_13: '978-1-60309-454-2', publication_year: 2019, edition: 'Book 1', price: 2000)
-
-p = Publisher.create(name: 'Graywolf Press')
-p.books.create(title: 'Essex County', isbn_13: '978-1-60309-038-4', publication_year: 1990, price: 500)
-p.books.create(title: 'Hey, Mister (Vol 1)', isbn_13: '978-1-891830-02-0', publication_year: 2000, edition: 'After School Special', price: 1200)
-
-p = Publisher.create(name: 'McSweeney\'s')
-p.books.create(title: 'The Underwater Welder', isbn_13: '978-1-60309-398-9', publication_year: 2022, price: 3000)
 
     
