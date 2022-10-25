@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <Navbar />
-      <Jumbo />
+      <ResultCards />
     </div>
   </div>
 </template>
@@ -10,11 +10,14 @@
 <script>
 import Jumbo from "./components/Jumbo.vue";
 import Navbar from "./components/Navbar.vue";
+import ResultCards from "./components/ResultCards.vue";
 
 export default {
   name: "App",
   components: {
-    Jumbo, Navbar
+    Jumbo,
+    Navbar,
+    ResultCards,
   },
 };
 </script>
