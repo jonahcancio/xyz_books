@@ -12,6 +12,10 @@ Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
+import axios from 'axios'
+Vue.prototype.$axios = axios;
+
+
 Vue.config.productionTip = false
 
 new Vue({
