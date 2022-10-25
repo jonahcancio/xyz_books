@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <Navbar />
-      <ResultCards />
+      <ResultCards :items="bookResults" />
     </div>
   </div>
 </template>
@@ -18,6 +18,22 @@ export default {
     Jumbo,
     Navbar,
     ResultCards,
+  },
+  data() {
+    return {
+      bookResults: []
+    }
+  },
+  mounted() {
+    this.$axios
+      .get("http://localhost:3000/books")
+      .then((response) => {
+        console.log(response);
+        this.bookResults = response.data
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   },
 };
 </script>
