@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <Navbar />
+      <Navbar @query="handleQuery" />
       <ResultCards :items="bookResults" />
     </div>
   </div>
@@ -21,19 +21,42 @@ export default {
   },
   data() {
     return {
-      bookResults: []
-    }
+      bookResults: [],
+    };
   },
-  mounted() {
-    this.$axios
-      .get("http://localhost:3000/books")
-      .then((response) => {
-        console.log(response);
-        this.bookResults = response.data
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  methods: {
+    handleQuery(searchInput) {
+      if (!searchInput) {
+        this.listAll();
+        return;
+      }
+      this.$axios
+        .get("http://localhost:3000/books/query", {
+          params: {
+            isbn: searchInput,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+          this.bookResults = [response.data];
+        })
+        .catch((error) => {
+          console.log(error);
+          this.bookResults = [];
+        });
+    },
+    listAll() {
+      this.$axios
+        .get("http://localhost:3000/books")
+        .then((response) => {
+          console.log(response);
+          this.bookResults = response.data;
+        })
+        .catch((error) => {
+          console.log(error);
+          this.bookResults = [];
+        });
+    },
   },
 };
 </script>

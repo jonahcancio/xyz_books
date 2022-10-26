@@ -10,7 +10,7 @@
             placeholder="Search"
             v-model="searchInput"
           />
-          <b-button variant="primary" size="sm" class="my-2 my-sm-0" type="submit">
+          <b-button variant="primary" size="sm" class="my-2 my-sm-0" @click="$emit('query', searchInput)">
             <b-icon-search />
           </b-button>
         </b-nav-form>

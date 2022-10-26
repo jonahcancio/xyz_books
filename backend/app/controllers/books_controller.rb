@@ -1,11 +1,16 @@
 class BooksController < ApplicationController
-  before_action :set_book, only: %i[ show update destroy ]
+  before_action :set_book, only: %i[ show ]
 
   # GET /books
   def index
     @books = Book.all
-    logger.info BooksService.new.convert_isbn "They call him Kukulcan" 
     render json: @books
+  end
+
+  # GET /books/query
+  def query
+    @book = Book.find_by! isbn_13: params[:isbn]
+    render json: @book
   end
 
   # GET /books/1
@@ -13,30 +18,32 @@ class BooksController < ApplicationController
     render json: @book
   end
 
-  # POST /books
-  def create
-    @book = Book.new(book_params)
 
-    if @book.save
-      render json: @book, status: :created, location: @book
-    else
-      render json: @book.errors, status: :unprocessable_entity
-    end
-  end
 
-  # PATCH/PUT /books/1
-  def update
-    if @book.update(book_params)
-      render json: @book
-    else
-      render json: @book.errors, status: :unprocessable_entity
-    end
-  end
+  # # POST /books
+  # def create
+  #   @book = Book.new(book_params)
 
-  # DELETE /books/1
-  def destroy
-    @book.destroy
-  end
+  #   if @book.save
+  #     render json: @book, status: :created, location: @book
+  #   else
+  #     render json: @book.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+  # # PATCH/PUT /books/1
+  # def update
+  #   if @book.update(book_params)
+  #     render json: @book
+  #   else
+  #     render json: @book.errors, status: :unprocessable_entity
+  #   end
+  # end
+
+  # # DELETE /books/1
+  # def destroy
+  #   @book.destroy
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
