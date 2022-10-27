@@ -25,7 +25,26 @@ class BooksService
     end
 
     def self.convert_isbn10_to_13(isbn_10)
-        return "Service is WORKING BABYYY: " + isbn
+        trim_str = "978" + isbn_10[0..10].gsub("-", "")
+        weight_arr = Array.new
+
+        i = 1
+        trim_str.each_char do |c|
+            weight_arr.push(c.to_i * i)
+            i = i == 1? 3 : 1
+        end
+
+        sum = weight_arr.sum
+        rem = sum % 10
+        check = 10 - rem
+        if check == 10
+            check_str = "0"
+        else
+            check_str = check.to_s
+        end
+
+        isbn_13 = trim_str.insert(3, "-").insert(5, "-").insert(12, "-") + "-#{check_str}"
+        return isbn_13
     end
 end
 

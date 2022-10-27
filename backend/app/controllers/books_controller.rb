@@ -9,7 +9,12 @@ class BooksController < ApplicationController
 
   # GET /books/query
   def query
-    @book = Book.find_by! isbn_13: params[:isbn]
+    @book = Book.find_by isbn_13: params[:isbn]
+    if @book.nil?
+      isbn_13 = BooksService.convert_isbn10_to_13(params[:isbn])
+      logger.info "ISBN 13 CONVERTED: #{isbn_13}"
+      @book = Book.find_by isbn_13: isbn_13
+    end
     render json: @book
   end
 

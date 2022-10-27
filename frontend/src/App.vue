@@ -38,7 +38,8 @@ export default {
         })
         .then((response) => {
           console.log(response);
-          this.bookResults = [response.data];
+          if (response.data) this.bookResults = [response.data];
+          else this.bookResults = [];
         })
         .catch((error) => {
           console.log(error);
