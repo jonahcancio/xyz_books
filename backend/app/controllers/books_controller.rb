@@ -9,12 +9,28 @@ class BooksController < ApplicationController
 
   # GET /books/query
   def query
-    @book = Book.find_by isbn_13: params[:isbn]
-    if @book.nil?
-      isbn_13 = BooksService.convert_isbn10_to_13(params[:isbn])
-      logger.info "ISBN 13 CONVERTED: #{isbn_13}"
-      @book = Book.find_by isbn_13: isbn_13
+    isbn = BooksService.trim_isbn(params[:isbn])
+    if BooksService.is_isbn13(isbn)
+      logger.info "ISBN-13 received"
+      @book = Book.find_by isbn_13: isbn
+    elsif BooksService.is_isbn10(isbn)
+      logger.info "ISBN-10 received"
+      isbn =  BooksService.convert_isbn10_to_13(isbn)
+      @book = Book.find_by isbn_13: isbn
+    else
+      logger.info "Invalid ISBN input"
+      return render json: {
+        error: "Invalid ISBN input"
+      }, status: 400
     end
+
+    if @book.nil?
+      logger.info "No book found with isbn: #{isbn}"
+      return render json: {
+        error: "No book found"
+      }, status: 404
+    end
+
     render json: @book
   end
 
