@@ -2,7 +2,12 @@
   <div>
     <b-jumbotron>
       <b-container>
-        <b-card v-for="item in items" no-body class="result-card mb-4">
+        <b-card
+          v-for="item in items"
+          :key="item.id"
+          no-body
+          class="result-card mb-4"
+        >
           <b-row no-gutters>
             <b-col md="4">
               <b-card-img
@@ -19,17 +24,17 @@
                   </p>
                   <p>
                     Edition: <span class="blue">{{ item.edition }}</span>
-                    <br />
+                    <br>
                     Price: <span class="blue">PHP {{ item.price }}</span>
-                    <br />
+                    <br>
                     ISBN: <span class="blue">{{ item.isbn_13 }}</span>
-                    <br />
+                    <br>
                     publication_year:
                     <span class="blue">{{ item.publication_year }}</span>
-                    <br />
+                    <br>
                     publisher:
                     <span class="blue">{{ item.publisher }}</span>
-                    <br />
+                    <br>
                   </p>
                 </b-card-text>
               </b-card-body>

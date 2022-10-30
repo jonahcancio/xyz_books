@@ -1,7 +1,12 @@
 <template>
   <div id="my-navbar">
-    <b-navbar type="light" variant="faded">
-      <b-navbar-brand href="#">XYZ</b-navbar-brand>
+    <b-navbar
+      type="light"
+      variant="faded"
+    >
+      <b-navbar-brand href="#">
+        XYZ
+      </b-navbar-brand>
       <b-navbar-nav class="mx-auto">
         <b-nav-form>
           <b-form-group
@@ -10,10 +15,10 @@
             :tooltip="true"
           >
             <b-form-input
+              v-model="searchInput"
               size="sm"
               class="mr-sm-2 round-input"
               placeholder="Search"
-              v-model="searchInput"
               :state="isValidIsbn"
             />
           </b-form-group>
@@ -31,14 +36,26 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-          <b-nav-item href="#">Home</b-nav-item>
-          <b-nav-item href="#">Rent Textbooks</b-nav-item>
-          <b-nav-item href="#">Buy Textbooks</b-nav-item>
-          <b-nav-item href="#">Sell Textbooks</b-nav-item>
+          <b-nav-item href="#">
+            Home
+          </b-nav-item>
+          <b-nav-item href="#">
+            Rent Textbooks
+          </b-nav-item>
+          <b-nav-item href="#">
+            Buy Textbooks
+          </b-nav-item>
+          <b-nav-item href="#">
+            Sell Textbooks
+          </b-nav-item>
         </b-navbar-nav>
-        <div class="v-divider"></div>
-        <b-nav-item href="#">En</b-nav-item>
-        <b-button variant="primary">Contact</b-button>
+        <div class="v-divider" />
+        <b-nav-item href="#">
+          En
+        </b-nav-item>
+        <b-button variant="primary">
+          Contact
+        </b-button>
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -57,17 +74,17 @@ export default {
       const trimput = this.searchInput.replaceAll("-", "");
       if (trimput.length == 13) {
         for (let i = 0; i < trimput.length; i++) {
-          if (parseInt(trimput[i]) == NaN) {
+          if (isNaN(parseInt(trimput[i]))) {
             return false;
           }
         }
       } else if (trimput.length == 10) {
         for (let i = 0; i < trimput.length; i++) {
-          if (i < trimput.length - 1 && parseInt(trimput[i]) == NaN) {
+          if (i < trimput.length - 1 && isNaN(parseInt(trimput[i]))) {
             return false;
           } else if (
             i == trimput.length - 1 &&
-            parseInt(trimput[i]) == NaN &&
+            isNaN(parseInt(trimput[i])) &&
             !trimput[i].equalsIgnoreCase("x")
           ) {
             return false;
