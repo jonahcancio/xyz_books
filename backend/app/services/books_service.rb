@@ -2,11 +2,11 @@ class BooksService
     @@logger = Rails.logger
 
     def self.trim_isbn(isbn)
-        return isbn.gsub("-", "")
+        !isbn.blank? and isbn.gsub("-", "")
     end
 
     def self.is_isbn13(isbn)
-        if isbn.nil? || isbn.length != 13
+        if isbn.blank? || isbn.length != 13
             return false
         end
         isbn.each_char.with_index do |c, i|
@@ -18,7 +18,7 @@ class BooksService
     end
 
     def self.is_isbn10(isbn)
-        if isbn.nil? || isbn.length != 10
+        if isbn.blank? || isbn.length != 10
             return false
         end
         isbn.each_char.with_index do |c, i|

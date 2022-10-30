@@ -1,16 +1,29 @@
 <template>
-  <div>
+  <div id="my-navbar">
     <b-navbar type="light" variant="faded">
       <b-navbar-brand href="#">XYZ</b-navbar-brand>
       <b-navbar-nav class="mx-auto">
         <b-nav-form>
-          <b-form-input
+          <b-form-group
+            :state="isValidIsbn"
+            invalid-feedback="Invalid ISBN input"
+            :tooltip="true"
+          >
+            <b-form-input
+              size="sm"
+              class="mr-sm-2 round-input"
+              placeholder="Search"
+              v-model="searchInput"
+              :state="isValidIsbn"
+            />
+          </b-form-group>
+
+          <b-button
+            variant="primary"
             size="sm"
-            class="mr-sm-2 round-input"
-            placeholder="Search"
-            v-model="searchInput"
-          />
-          <b-button variant="primary" size="sm" class="my-2 my-sm-0" @click="$emit('query', searchInput)">
+            class="my-2 my-sm-0"
+            @click="$emit('query', searchInput)"
+          >
             <b-icon-search />
           </b-button>
         </b-nav-form>
@@ -38,16 +51,49 @@ export default {
       searchInput: "",
     };
   },
+  computed: {
+    isValidIsbn() {
+      if (!this.searchInput) return null;
+      const trimput = this.searchInput.replaceAll("-", "");
+      if (trimput.length == 13) {
+        for (let i = 0; i < trimput.length; i++) {
+          if (parseInt(trimput[i]) == NaN) {
+            return false;
+          }
+        }
+      } else if (trimput.length == 10) {
+        for (let i = 0; i < trimput.length; i++) {
+          if (i < trimput.length - 1 && parseInt(trimput[i]) == NaN) {
+            return false;
+          } else if (
+            i == trimput.length - 1 &&
+            parseInt(trimput[i]) == NaN &&
+            !trimput[i].equalsIgnoreCase("x")
+          ) {
+            return false;
+          }
+        }
+      } else {
+        return false;
+      }
+      return true;
+    },
+  },
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.v-divider {
-  border-left: 0.5px solid rgb(233, 236, 239);
-}
+<style lang="less">
+#my-navbar {
+  .v-divider {
+    border-left: 0.5px solid rgb(233, 236, 239);
+  }
 
-.round-input {
+  .round-input {
     border-radius: 16px;
+  }
+  .invalid-tooltip {
+    left: auto;
+  }
 }
 </style>

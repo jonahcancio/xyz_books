@@ -10,7 +10,9 @@ class BooksController < ApplicationController
   # GET /books/query
   def query
     isbn = BooksService.trim_isbn(params[:isbn])
-    if BooksService.is_isbn13(isbn)
+    if !isbn
+      @book = Book.all
+    elsif BooksService.is_isbn13(isbn)
       logger.info "ISBN-13 received"
       @book = Book.find_by isbn_13: isbn
     elsif BooksService.is_isbn10(isbn)
