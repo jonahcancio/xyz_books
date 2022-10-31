@@ -2,20 +2,18 @@
   <div id="app">
     <div>
       <Navbar @query="handleQuery" />
-      <ResultCards :items="bookResults" />
+      <router-view :book-results="bookResults" />
     </div>
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-import ResultCards from "./components/ResultCards.vue";
 
 export default {
   name: "App",
   components: {
     Navbar,
-    ResultCards,
   },
   data() {
     return {
@@ -27,6 +25,9 @@ export default {
   },
   methods: {
     handleQuery(searchInput) {
+      this.$router
+        .push({ name: "result", params: { isbn: searchInput } })
+        .catch((err) => {console.log("no route change")});
       if (!searchInput) {
         this.listAll();
         return;

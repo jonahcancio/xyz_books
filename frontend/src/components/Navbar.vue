@@ -4,7 +4,7 @@
       type="light"
       variant="faded"
     >
-      <b-navbar-brand href="#">
+      <b-navbar-brand :to="{ name: 'home' }">
         XYZ
       </b-navbar-brand>
       <b-navbar-nav class="mx-auto">
@@ -27,7 +27,7 @@
             variant="primary"
             size="sm"
             class="my-2 my-sm-0"
-            @click="$emit('query', searchInput)"
+            @click="trySearch"
           >
             <b-icon-search />
           </b-button>
@@ -65,7 +65,7 @@
 export default {
   data() {
     return {
-      searchInput: "",
+      searchInput: this.$route.params.isbn,
     };
   },
   computed: {
@@ -94,6 +94,32 @@ export default {
         return false;
       }
       return true;
+    },
+  },
+  watch: {
+    $route(to, from) {
+      console.log("watch route")
+      this.syncRouteToSearch(to);
+    },
+  },
+  mounted() {
+    console.log("mount")
+    this.syncRouteToSearch(this.$route);
+  },
+  methods: {
+    trySearch() {
+      console.log("try Search")
+      if (this.isValidIsbn || this.isValidIsbn == null) {
+        console.log("is Valid")
+        this.$emit("query", this.searchInput);
+      }
+    },
+    syncRouteToSearch(route) {
+      if (route.name == "result") {
+        console.log("route result")
+        this.searchInput = route.params.isbn;
+        this.trySearch();
+      }
     },
   },
 };

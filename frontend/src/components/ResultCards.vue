@@ -49,15 +49,16 @@
 <script>
 export default {
   props: {
-    items: Array,
-    default: {}
+    items: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {};
   },
 
-  methods: {
-  },
+  methods: {},
 };
 </script>
 
