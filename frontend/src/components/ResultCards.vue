@@ -29,10 +29,10 @@
                     <br>
                     ISBN: <span class="blue">{{ item.isbn_13 }}</span>
                     <br>
-                    publication_year:
+                    Publication Year:
                     <span class="blue">{{ item.publication_year }}</span>
                     <br>
-                    publisher:
+                    Publisher:
                     <span class="blue">{{ item.publisher }}</span>
                     <br>
                   </p>

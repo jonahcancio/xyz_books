@@ -1,61 +1,36 @@
 <template>
   <div id="my-navbar">
-    <b-navbar
-      type="light"
-      variant="faded"
-    >
-      <b-navbar-brand :to="{ name: 'home' }">
-        XYZ
-      </b-navbar-brand>
+    <b-navbar type="light" variant="faded">
+      <b-navbar-brand :to="{ name: 'home' }"> XYZ </b-navbar-brand>
       <b-navbar-nav class="mx-auto">
-        <b-nav-form>
+        <b-nav-form @submit.prevent="trySearch">
           <b-form-group
             :state="isValidIsbn"
             invalid-feedback="Invalid ISBN input"
             :tooltip="true"
           >
+            <b-icon-search class="search-icon" />
             <b-form-input
               v-model="searchInput"
               size="sm"
-              class="mr-sm-2 round-input"
+              class="mr-sm-2 round-input search-input"
               placeholder="Search"
               :state="isValidIsbn"
             />
           </b-form-group>
-
-          <b-button
-            variant="primary"
-            size="sm"
-            class="my-2 my-sm-0"
-            @click="trySearch"
-          >
-            <b-icon-search />
-          </b-button>
         </b-nav-form>
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-          <b-nav-item href="#">
-            Home
-          </b-nav-item>
-          <b-nav-item href="#">
-            Rent Textbooks
-          </b-nav-item>
-          <b-nav-item href="#">
-            Buy Textbooks
-          </b-nav-item>
-          <b-nav-item href="#">
-            Sell Textbooks
-          </b-nav-item>
+          <b-nav-item href="#"> Home </b-nav-item>
+          <b-nav-item href="#"> Rent Textbooks </b-nav-item>
+          <b-nav-item href="#"> Buy Textbooks </b-nav-item>
+          <b-nav-item href="#"> Sell Textbooks </b-nav-item>
         </b-navbar-nav>
-        <div class="v-divider" />
-        <b-nav-item href="#">
-          En
-        </b-nav-item>
-        <b-button variant="primary">
-          Contact
-        </b-button>
+        <div class="v-divider"></div>
+        <b-nav-item href="#"> En </b-nav-item>
+        <b-button variant="primary"> Contact </b-button>
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -98,25 +73,21 @@ export default {
   },
   watch: {
     $route(to, from) {
-      console.log("watch route")
       this.syncRouteToSearch(to);
     },
   },
   mounted() {
-    console.log("mount")
     this.syncRouteToSearch(this.$route);
   },
   methods: {
     trySearch() {
-      console.log("try Search")
       if (this.isValidIsbn || this.isValidIsbn == null) {
-        console.log("is Valid")
         this.$emit("query", this.searchInput);
       }
     },
     syncRouteToSearch(route) {
+      console.log(route);
       if (route.name == "result") {
-        console.log("route result")
         this.searchInput = route.params.isbn;
         this.trySearch();
       }
@@ -131,12 +102,21 @@ export default {
   .v-divider {
     border-left: 0.5px solid rgb(233, 236, 239);
   }
-
   .round-input {
     border-radius: 16px;
   }
   .invalid-tooltip {
     left: auto;
+  }
+
+  .search-icon {
+    position: relative;
+    left: 25px;
+    top: 2px;
+  }
+
+  .search-input {
+    padding-left: 30px;
   }
 }
 </style>

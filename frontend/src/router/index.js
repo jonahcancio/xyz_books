@@ -7,7 +7,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/result/:isbn? ',
+    path: '/result/:isbn?',
     name: 'result',
     component: ResultView
   },
