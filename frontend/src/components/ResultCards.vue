@@ -50,6 +50,7 @@
 export default {
   props: {
     items: Array,
+    default: {}
   },
   data() {
     return {};

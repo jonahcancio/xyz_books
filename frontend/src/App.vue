@@ -22,6 +22,9 @@ export default {
       bookResults: [],
     };
   },
+  mounted() {
+    console.log(`API URL: ${process.env.VUE_APP_API_BASE_URL}`);
+  },
   methods: {
     handleQuery(searchInput) {
       if (!searchInput) {
@@ -29,7 +32,7 @@ export default {
         return;
       }
       this.$axios
-        .get("http://localhost:3000/books/query", {
+        .get("/books/query", {
           params: {
             isbn: searchInput,
           },
@@ -46,7 +49,7 @@ export default {
     },
     listAll() {
       this.$axios
-        .get("http://localhost:3000/books")
+        .get("/books")
         .then((response) => {
           console.log(response);
           this.bookResults = response.data;
