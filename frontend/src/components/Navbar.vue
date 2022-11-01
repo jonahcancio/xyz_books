@@ -6,11 +6,11 @@
         >Save up to $500 per year on millions of book titles!</span
       ><b-img src="@/assets/26.svg" />
     </div>
-    <b-navbar type="light" variant="faded" class="px-5">
+    <b-navbar type="light" variant="faded" class="navbar-main">
       <b-navbar-brand :to="{ name: 'home' }">
         <b-img src="@/assets/sample logo.svg" fluid alt="sample logo"></b-img>
       </b-navbar-brand>
-      <b-navbar-nav class="mx-auto">
+      <b-navbar-nav class="ml-5">
         <b-nav-form @submit.prevent="trySearch">
           <b-form-group
             :state="isValidIsbn"
@@ -106,10 +106,8 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 #navbar {
-  // font-family: Tahoma, Verdana, sans-serif;
 
   .top-banner {
     padding-top: 0.5rem;
@@ -123,6 +121,11 @@ export default {
       -webkit-transform: scaleX(-1);
       transform: scaleX(-1);
     }
+  }
+
+  .navbar-main {
+    padding-left: 6rem;
+    padding-right: 6rem;
   }
 
   .v-divider {
