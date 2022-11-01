@@ -1,7 +1,15 @@
 <template>
-  <div id="my-navbar">
-    <b-navbar type="light" variant="faded">
-      <b-navbar-brand :to="{ name: 'home' }"> XYZ </b-navbar-brand>
+  <div id="navbar">
+    <div class="top-banner">
+      <b-img src="@/assets/26.svg" class="img-flip" />
+      <span class="mx-2"
+        >Save up to $500 per year on millions of book titles!</span
+      ><b-img src="@/assets/26.svg" />
+    </div>
+    <b-navbar type="light" variant="faded" class="px-5">
+      <b-navbar-brand :to="{ name: 'home' }">
+        <b-img src="@/assets/sample logo.svg" fluid alt="sample logo"></b-img>
+      </b-navbar-brand>
       <b-navbar-nav class="mx-auto">
         <b-nav-form @submit.prevent="trySearch">
           <b-form-group
@@ -29,8 +37,10 @@
           <b-nav-item href="#"> Sell Textbooks </b-nav-item>
         </b-navbar-nav>
         <div class="v-divider"></div>
-        <b-nav-item href="#"> En </b-nav-item>
-        <b-button variant="primary"> Contact </b-button>
+        <b-nav-item href="#">
+          <b-img src="@/assets/Icon feather-globe.svg" /> En
+        </b-nav-item>
+        <b-button variant="primary" class="contact-button"> Contact </b-button>
       </b-navbar-nav>
     </b-navbar>
   </div>
@@ -98,7 +108,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
-#my-navbar {
+#navbar {
+  // font-family: Tahoma, Verdana, sans-serif;
+
+  .top-banner {
+    padding-top: 0.5rem;
+    height: 40px;
+    text-align: center;
+    background-image: url("@/assets/Mask Group 4.png");
+    background-size: cover;
+    color: white;
+
+    .img-flip {
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+  }
+
   .v-divider {
     border-left: 0.5px solid rgb(233, 236, 239);
   }
@@ -117,6 +143,14 @@ export default {
 
   .search-input {
     padding-left: 30px;
+  }
+
+  .contact-button {
+    border-radius: 12px;
+    background-color: #6160f6;
+    width: 120px;
+    height: 45px;
+    border-style: none;
   }
 }
 </style>
