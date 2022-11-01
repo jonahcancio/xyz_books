@@ -17,7 +17,7 @@
             class="p-3 mh-100"
           />
         </b-col>
-        <b-col md="8">
+        <b-col md="8" class="pl-4">
           <b-card-body>
             <b-card-title><h4>{{ item.title }}</h4></b-card-title>
             <b-card-text>
