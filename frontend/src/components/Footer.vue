@@ -2,16 +2,16 @@
   <b-container fluid id="footer">
     <b-row class="footer-row">
       <b-col cols="4" class="footer-col-1">
-        <b-img src="../assets/sample logo.svg" fluid alt="sample logo"></b-img>
-        <p>
+        <b-img src="../assets/sample logo.svg" fluid class="mb-4"></b-img>
+        <p class="mb-5">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod
         </p>
-        <b-form-group class="position-relative">
+        <b-form-group class="position-relative mr-5">
           <b-icon-chevron-right class="chevron-right-icon" />
           <b-form-input
-            size="sm"
-            class="mr-sm-2 round-input email-input"
+            size="md"
+            class="mr-2 round-input email-input"
             placeholder="Email Address"
           />
         </b-form-group>
@@ -75,31 +75,32 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less">
 #footer {
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
+  color: #061a45;
 
   .round-input {
-    border-radius: 16px;
+    border-radius: 1rem;
   }
 
   .chevron-right-icon {
     position: absolute;
-    right: 10px;
-    top: 7px;
+    right: 0.6rem;
+    top: 0.75rem;
   }
 
   .email-input {
-    padding-right: 30px;
+    padding-right: 2rem;
     border-color: #6f6ef7;
   }
 
   .footer-row {
     [class*="col"] {
-      padding-top: 30px;
+      padding-top: 2rem;
     }
 
     .footer-col-1 {
-      padding-left: 100px;
-      padding-right: 100px;
+      padding-left: 6rem;
+      padding-right: 6rem;
     }
 
     .footer-col-5 {
@@ -112,21 +113,21 @@ export default {
         background-color: #5fd2fa;
         border-radius: 50%;
         border-style: none;
-        padding: 18px;
+        padding: 1rem;
       }
     }
 
     .footer-col-social {
       display: flex;
-      gap: 10px;
+      gap: 0.5rem;
       align-items: flex-start;
 
       .social-button {
         background-color: #f2f2ff;
         border-radius: 50%;
         border-style: none;
-        padding: 18px;
-        width: 60px;
+        padding: 1rem;
+        width: 3.75rem;
       }
     }
   }

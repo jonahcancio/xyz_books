@@ -34,10 +34,10 @@
           <b-nav-item href="#"> Home </b-nav-item>
           <b-nav-item href="#"> Rent Textbooks </b-nav-item>
           <b-nav-item href="#"> Buy Textbooks </b-nav-item>
-          <b-nav-item href="#"> Sell Textbooks </b-nav-item>
+          <b-nav-item href="#" class="mr-2"> Sell Textbooks </b-nav-item>
         </b-navbar-nav>
         <div class="v-divider"></div>
-        <b-nav-item href="#">
+        <b-nav-item href="#" class="mx-2">
           <b-img src="@/assets/Icon feather-globe.svg" /> En
         </b-nav-item>
         <b-button variant="primary" class="contact-button"> Contact </b-button>

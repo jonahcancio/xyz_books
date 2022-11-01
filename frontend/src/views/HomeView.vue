@@ -66,17 +66,223 @@
         </b-col>
       </b-row>
     </div>
+    <div class="mid-bg">
+      <div class="text-center">
+        <h1>Explore Our Books</h1>
+      </div>
+      <div class="text-center">
+        <p>
+          With our dedicated customer support team, you can rest easy knowing
+          that we’re doing everything we can to save you time, money, and
+          stress.
+        </p>
+      </div>
+      <b-row class="explore-books">
+        <b-col>
+          <b-card border-variant="light" class="text-center mb-3 book-card">
+            <b-card-img src="@/assets/doughnuts & Doom.png"></b-card-img>
+          </b-card>
+          <h2 class="px-3 mb-3 text-white">Doughnuts And Doom</h2>
+          <b-link>
+            <h5 class="px-3 view-book">
+              View Book Details
+              <b-icon-chevron-right class="chevron-right-icon" />
+            </h5>
+          </b-link>
+        </b-col>
+        <b-col>
+          <b-card border-variant="light" class="text-center mb-3 book-card">
+            <b-card-img src="@/assets/The Bend of Luck.png"></b-card-img>
+          </b-card>
+          <h2 class="px-3 mb-3 text-white">The Bend of Luck</h2>
+          <b-link>
+            <h5 class="px-3 view-book">
+              View Book Details
+              <b-icon-chevron-right class="chevron-right-icon" />
+            </h5>
+          </b-link>
+        </b-col>
+        <b-col>
+          <b-card border-variant="light" class="text-center mb-3 book-card">
+            <b-card-img src="@/assets/The Underwater Welder.png"></b-card-img>
+          </b-card>
+          <h2 class="px-3 mb-3 text-white">The Underwater Welder</h2>
+          <b-link>
+            <h5 class="px-3 view-book">
+              View Book Details
+              <b-icon-chevron-right class="chevron-right-icon" />
+            </h5>
+          </b-link>
+        </b-col>
+      </b-row>
+      <div class="shop-reasons text-white">
+        <div class="text-warning text-uppercase"><h6>Lorem ipsum</h6></div>
+        <div class="text-white mb-5"><h1>3 Reasons to shop with us</h1></div>
+        <b-row>
+          <b-col>
+            <b-img
+              src="@/assets/package-box.svg"
+              class="mb-3 reason-img"
+            ></b-img>
+            <h2 class="mb-3">
+              All textbook rentals come with free return shipping.
+            </h2>
+            <p class="">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore Stet clita kasd
+              gubergren, no sea takimata.
+            </p>
+          </b-col>
+          <b-col>
+            <b-img src="@/assets/help.svg" class="mb-3 reason-img"></b-img>
+            <h2 class="mb-3">Dedicated customer support and help portal.</h2>
+            <p class="">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore Stet clita kasd
+              gubergren, no sea takimata.
+            </p>
+          </b-col>
+          <b-col>
+            <b-img
+              src="@/assets/piggy-bank.svg"
+              class="mb-3 reason-img"
+            ></b-img>
+            <h2 class="mb-3">
+              Buy or rent cheap textbooks & save up to $500 per year!
+            </h2>
+            <p class="">
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore Stet clita kasd
+              gubergren, no sea takimata.
+            </p>
+          </b-col>
+        </b-row>
+      </div>
+      <div class="product-manager text-center">
+        <h2 class="name">Andrew Santellan</h2>
+        <h6 class="role">Product Manager, Binance</h6>
+        <div class="client">
+          <b-img src="@/assets/Binance.svg" class="mr-2" />
+          <span>Binance</span>
+        </div>
+        <div class="rating-card-container">
+          <b-card text-variant="white" class="rating-card">
+            <b-img src="@/assets/user.png" class="avatar" />
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet.
+            </p>
+            <footer class="text-center">
+              <b-img src="@/assets/star.svg" class="" />
+            </footer>
+          </b-card>
+        </div>
+      </div>
+    </div>
+
+    <b-jumbotron fluid class="faq-jumbo">
+      <h1>Frequently Asked Questions</h1>
+      <div class="accordion" role="tablist">
+        <div class="mb-1">
+          <header class="p-1" role="tab">
+            <div v-b-toggle.accordion-1 class="faq-header">
+              <h5>Dedicated customer support and help portal.</h5>
+              <b-img src="@/assets/Path 9712.svg" />
+            </div>
+          </header>
+          <b-collapse
+            id="accordion-1"
+            visible
+            accordion="my-accordion"
+            role="tabpanel"
+          >
+            <b-card-body>
+              <b-card-text>
+                With our dedicated customer support team, you can rest easy
+                knowing that we're doing everything we can to save you time,
+                money, and stress.
+              </b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </div>
+        <div class="mb-1">
+          <header class="p-1" role="tab">
+            <div v-b-toggle.accordion-2 class="faq-header">
+              <h5>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              </h5>
+              <b-img src="@/assets/Path 9712.svg" class="flip-vertical" />
+            </div>
+          </header>
+          <b-collapse
+            id="accordion-2"
+            visible
+            accordion="my-accordion"
+            role="tabpanel"
+          >
+            <b-card-body>
+              <b-card-text> </b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </div>
+        <div class="mb-1">
+          <header class="p-1" role="tab">
+            <div v-b-toggle.accordion-3 class="faq-header">
+              <h5>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              </h5>
+              <b-img src="@/assets/Path 9712.svg" class="flip-vertical" />
+            </div>
+          </header>
+          <b-collapse
+            id="accordion-3"
+            visible
+            accordion="my-accordion"
+            role="tabpanel"
+          >
+            <b-card-body>
+              <b-card-text> </b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </div>
+        <div class="mb-1">
+          <header class="p-1" role="tab">
+            <div v-b-toggle.accordion-4 class="faq-header">
+              <h5>
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+              </h5>
+              <b-img src="@/assets/Path 9712.svg" class="flip-vertical" />
+            </div>
+          </header>
+          <b-collapse
+            id="accordion-4"
+            visible
+            accordion="my-accordion"
+            role="tabpanel"
+          >
+            <b-card-body>
+              <b-card-text> </b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </div>
+      </div>
+    </b-jumbotron>
   </b-container>
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: "HomeView",
-  components: {
-    // HelloWorld
+  methods: {
+    accordionToggle(acc) {
+      let key = `v-b-toggle.accordion-${acc}`;
+      return {
+        [key]: true,
+      };
+    },
   },
 };
 </script>
@@ -98,8 +304,7 @@ export default {
       color: white;
       background-color: #6160f6;
       border-radius: 0.5rem;
-      padding-left: 2rem;
-      padding-right: 2rem;
+      padding: 0.5rem 2rem;
       border-style: none;
     }
 
@@ -124,7 +329,7 @@ export default {
     }
 
     .learn-more-button {
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem 1.75rem;
       color: #5fd2fa;
       background-color: #151c55;
       border-radius: 0.5rem;
@@ -140,10 +345,112 @@ export default {
     }
   }
 
+  .mid-bg {
+    padding-top: 6rem;
+    background-image: linear-gradient(
+      -2deg,
+      white,
+      white 28%,
+      #061a36 28.25%,
+      #061a36 70%,
+      white 70.25%,
+      white
+    );
+
+    .explore-books {
+      padding: 1rem 8rem;
+      margin-bottom: 7rem;
+
+      .book-card {
+        background-image: linear-gradient(rgba(0, 0, 0, 0), #e5e8ec);
+      }
+
+      .view-book {
+        color: #5fd2fa;
+      }
+    }
+
+    .shop-reasons {
+      padding-left: 6rem;
+      padding-right: 12rem;
+      padding-bottom: 10rem;
+
+      .reason-img {
+        height: 4rem;
+      }
+
+      .col {
+        padding-right: 3rem;
+      }
+    }
+
+    .product-manager {
+      margin-bottom: 8rem;
+
+      .name {
+        color: #151c55;
+      }
+
+      .role {
+        color: #5fd2fa;
+      }
+
+      .client {
+        color: #8a8daa;
+        font-size: 1.5rem;
+        font-weight: 500;
+
+        img {
+          opacity: 0.5;
+        }
+      }
+
+      .rating-card-container {
+        margin-top: 6rem;
+        padding-left: 24rem;
+        padding-right: 24rem;
+
+        .rating-card {
+          border-radius: 0.75rem;
+          background-color: #4299f7;
+          padding: 4rem 4rem 1rem;
+
+          position: relative;
+          .avatar {
+            width: 8rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          box-shadow: 00rem -2rem 0.25rem -0.75rem #d9ebfd;
+        }
+      }
+    }
+  }
+
+  .faq-jumbo {
+    padding-left: 26rem;
+    padding-right: 26rem;
+
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      color: #6182f7;
+    }
+  }
+
   .vertical-center {
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+
+  .flip-vertical {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
   }
 }
 </style>
