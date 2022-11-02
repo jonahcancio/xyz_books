@@ -2,19 +2,19 @@
   <div id="app">
       <Navbar @query="handleQuery" />
       <router-view :book-results="bookResults" />
-      <Footer />
+      <FooterBar />
 
   </div>
 </template>
 
 <script>
 import Navbar from "./components/Navbar.vue";
-import Footer from "./components/Footer.vue"
+import FooterBar from "./components/FooterBar.vue"
 
 export default {
   name: "App",
   components: {
-    Navbar, Footer
+    Navbar, FooterBar
   },
   data() {
     return {
