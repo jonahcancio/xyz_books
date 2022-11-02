@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     get 'books/query', to: 'books#query'
+    get 'books/convert', to: 'books#convert'
     resources :books, only: [:index, :show]
   end
   
