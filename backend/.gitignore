@@ -32,4 +32,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-/public
+#ignore frontend build except robots.txt to keep folder
+/public/frontend/*
+!/public/frontend/robots.txt
+
