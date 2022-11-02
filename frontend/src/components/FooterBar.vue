@@ -18,28 +18,28 @@
       </b-col>
       <b-col cols="2">
         <h4>Menu</h4>
-        <div>Shop All</div>
-        <div>About Us</div>
-        <div>Community</div>
-        <div>FAQs</div>
+        <div><b-link>Shop All</b-link></div>
+        <div><b-link>About Us</b-link></div>
+        <div><b-link>Community</b-link></div>
+        <div><b-link>FAQs</b-link></div>
       </b-col>
       <b-col cols="2">
         <h4>Support</h4>
-        <div>Shipping & Returns</div>
-        <div>Help & FAQ</div>
-        <div>Terms & Conditions</div>
-        <div>Privacy Policy</div>
-        <div>Contact</div>
-        <div>Login</div>
+        <div><b-link>Shipping & Returns</b-link></div>
+        <div><b-link>Help & FAQ</b-link></div>
+        <div><b-link>Terms & Conditions</b-link></div>
+        <div><b-link>Privacy Policy</b-link></div>
+        <div><b-link>Contact</b-link></div>
+        <div><b-link>Login</b-link></div>
       </b-col>
       <b-col cols="2">
         <h4>Resources</h4>
-        <div>Shipping & Returns</div>
-        <div>Help & FAQ</div>
-        <div>Terms & Conditions</div>
-        <div>Privacy Policy</div>
-        <div>Contact</div>
-        <div>Login</div>
+        <div><b-link>Shipping & Returns</b-link></div>
+        <div><b-link>Help & FAQ</b-link></div>
+        <div><b-link>Terms & Conditions</b-link></div>
+        <div><b-link>Privacy Policy</b-link></div>
+        <div><b-link>Contact</b-link></div>
+        <div><b-link>Login</b-link></div>
       </b-col>
       <b-col cols="2" class="footer-col-5">
         <b-button class="msg-button">
@@ -96,6 +96,10 @@ export default {
   .footer-row {
     [class*="col"] {
       padding-top: 2rem;
+    }
+
+    a {
+      color: #061a45;
     }
 
     .footer-col-1 {

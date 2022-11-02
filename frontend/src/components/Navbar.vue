@@ -16,6 +16,7 @@
             :state="isValidIsbn"
             invalid-feedback="Invalid ISBN input"
             :tooltip="true"
+            class="position-relative"
           >
             <b-icon-search class="search-icon" />
             <b-form-input
@@ -31,7 +32,7 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-          <b-nav-item href="#"> Home </b-nav-item>
+          <b-nav-item :to="{ name: 'home' }"> Home </b-nav-item>
           <b-nav-item href="#"> Rent Textbooks </b-nav-item>
           <b-nav-item href="#"> Buy Textbooks </b-nav-item>
           <b-nav-item href="#" class="mr-2"> Sell Textbooks </b-nav-item>
@@ -70,7 +71,7 @@ export default {
           } else if (
             i == trimput.length - 1 &&
             isNaN(parseInt(trimput[i])) &&
-            !trimput[i].equalsIgnoreCase("x")
+            trimput[i].toUpperCase() != "X"
           ) {
             return false;
           }
@@ -108,7 +109,6 @@ export default {
 
 <style lang="less">
 #navbar {
-
   .top-banner {
     padding-top: 0.5rem;
     height: 40px;
@@ -135,7 +135,8 @@ export default {
     border-radius: 16px;
   }
   .invalid-tooltip {
-    left: auto;
+    left: 10%;
+    top: 110%;
   }
 
   .search-icon {

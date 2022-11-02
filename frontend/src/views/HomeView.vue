@@ -175,9 +175,9 @@
               dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
               sanctus est Lorem ipsum dolor sit amet.
             </p>
-            <footer class="text-center">
+            <div class="text-center">
               <b-img src="@/assets/star.svg" class="" />
-            </footer>
+            </div>
           </b-card>
         </div>
       </div>

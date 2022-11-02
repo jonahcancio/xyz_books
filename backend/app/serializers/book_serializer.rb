@@ -1,7 +1,7 @@
 class BookSerializer < ActiveModel::Serializer
   attributes :id, :title, :isbn_13, :price, :edition,
     :publication_year, :image_url,
-    :publisher, :authors
+    :publisher, :authors,
     :isbn_10
 
   # belongs_to :publisher
