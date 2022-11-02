@@ -32,7 +32,7 @@
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
         <b-navbar-nav>
-          <b-nav-item href="#"> Home </b-nav-item>
+          <b-nav-item :to="{ name: 'home' }"> Home </b-nav-item>
           <b-nav-item href="#"> Rent Textbooks </b-nav-item>
           <b-nav-item href="#"> Buy Textbooks </b-nav-item>
           <b-nav-item href="#" class="mr-2"> Sell Textbooks </b-nav-item>
