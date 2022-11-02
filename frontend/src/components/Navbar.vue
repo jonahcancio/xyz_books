@@ -16,7 +16,7 @@
             :state="isValidIsbn"
             invalid-feedback="Invalid ISBN input"
             :tooltip="true"
-            class="search-group"
+            class="position-relative"
           >
             <b-icon-search class="search-icon" />
             <b-form-input
@@ -71,7 +71,7 @@ export default {
           } else if (
             i == trimput.length - 1 &&
             isNaN(parseInt(trimput[i])) &&
-            !trimput[i].equalsIgnoreCase("x")
+            trimput[i].toUpperCase() != "X"
           ) {
             return false;
           }
@@ -134,24 +134,19 @@ export default {
   .round-input {
     border-radius: 16px;
   }
+  .invalid-tooltip {
+    left: 10%;
+    top: 110%;
+  }
 
-  .search-group {
+  .search-icon {
     position: relative;
+    left: 25px;
+    top: 2px;
+  }
 
-    .invalid-tooltip {
-      left: 10%;
-      top: 110%;
-    }
-
-    .search-icon {
-      position: relative;
-      left: 25px;
-      top: 2px;
-    }
-
-    .search-input {
-      padding-left: 30px;
-    }
+  .search-input {
+    padding-left: 30px;
   }
 
   .contact-button {
