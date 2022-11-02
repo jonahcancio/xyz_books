@@ -16,6 +16,7 @@
             :state="isValidIsbn"
             invalid-feedback="Invalid ISBN input"
             :tooltip="true"
+            class="search-group"
           >
             <b-icon-search class="search-icon" />
             <b-form-input
@@ -108,7 +109,6 @@ export default {
 
 <style lang="less">
 #navbar {
-
   .top-banner {
     padding-top: 0.5rem;
     height: 40px;
@@ -134,18 +134,24 @@ export default {
   .round-input {
     border-radius: 16px;
   }
-  .invalid-tooltip {
-    left: auto;
-  }
 
-  .search-icon {
+  .search-group {
     position: relative;
-    left: 25px;
-    top: 2px;
-  }
 
-  .search-input {
-    padding-left: 30px;
+    .invalid-tooltip {
+      left: 10%;
+      top: 110%;
+    }
+
+    .search-icon {
+      position: relative;
+      left: 25px;
+      top: 2px;
+    }
+
+    .search-input {
+      padding-left: 30px;
+    }
   }
 
   .contact-button {
