@@ -7,7 +7,6 @@
       no-body
       class="result-card mb-4"
       border-variant="light"
-
     >
       <b-row no-gutters>
         <b-col md="4">
@@ -19,17 +18,23 @@
         </b-col>
         <b-col md="8" class="pl-4">
           <b-card-body>
-            <b-card-title><h4>{{ item.title }}</h4></b-card-title>
+            <b-card-title
+              ><h4>{{ item.title }}</h4></b-card-title
+            >
             <b-card-text>
               <h6>
                 {{ item.authors && `by ${item.authors}` }}
               </h6>
               <p>
-                Edition: <span class="blue">{{ item.edition }}</span>
-                <br />
+                <span v-if="item.edition"
+                  >Edition: <span class="blue">{{ item.edition }}</span
+                  ><br />
+                </span>
                 Price: <span class="blue">PHP {{ item.price }}</span>
                 <br />
-                ISBN: <span class="blue">{{ item.isbn_13 }}</span>
+                ISBN-13: <span class="blue">{{ item.isbn_13 }}</span>
+                <br />
+                ISBN-10: <span class="blue">{{ item.isbn_10 }}</span>
                 <br />
                 Publication Year:
                 <span class="blue">{{ item.publication_year }}</span>
