@@ -12,9 +12,9 @@
       <b-row no-gutters>
         <b-col md="4">
           <b-card-img
-            :src="item.img_url || `https://picsum.photos/400/400/?image=20`"
+            :src="item.image_url || `https://picsum.photos/400/400/?image=20`"
             alt="Image"
-            class="p-3 mh-100"
+            class="p-3 book-img"
           />
         </b-col>
         <b-col md="8" class="pl-4">
@@ -64,6 +64,12 @@ export default {
 #result-cards {
   padding: 3rem 8rem;
   color: #061a45;
+
+  .book-img {
+    max-height: 28rem;
+    object-fit: contain;
+    // object-position: 50% 50%;
+  }
 
   .blue {
     color: rgb(97, 96, 247);

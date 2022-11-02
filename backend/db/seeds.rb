@@ -25,23 +25,28 @@ Publisher.create([
 
 Book.create(title: 'American Elf', isbn_13: '9781891830853', publication_year: 2004, edition: 'Book 2', price: 1000,
     publisher: Publisher.find_by(name: 'Paste Magazine'),
-    authors: [Author.find_by(first_name: 'Joel'), Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Marguerite')]
+    authors: [Author.find_by(first_name: 'Joel'), Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Marguerite')],
+    image_url: 'https://images-na.ssl-images-amazon.com/images/I/71Iz84+tLIL._AC_UL600_SR600,600_.jpg'
 )
 Book.create(title: 'Cosmoknights', isbn_13: '9781603094542', publication_year: 2019, edition: 'Book 1', price: 2000,
     publisher: Publisher.find_by(name: 'Publishers Weekly'),
-    authors: [Author.find_by(first_name: 'Kingsley')]
+    authors: [Author.find_by(first_name: 'Kingsley')],
+    image_url: 'https://uploads-ssl.webflow.com/5c2572d8fd28a7238eeec2dd/609ff382c598f367c39fd584_cosmoknights_book_one_colors_WEB_01.jpg'
 )
 Book.create(title: 'Essex County', isbn_13: '9781603090384', publication_year: 1990, price: 500,
     publisher: Publisher.find_by(name: 'Graywolf Press'),
-    authors: [Author.find_by(first_name: 'Kingsley')]
+    authors: [Author.find_by(first_name: 'Kingsley')],
+    image_url: 'https://m.media-amazon.com/images/I/8125Bbu9dsL.jpg'
 )
 Book.create(title: 'Hey, Mister (Vol 1)', isbn_13: '9781891830020', publication_year: 2000, edition: 'After School Special', price: 1200,
     publisher: Publisher.find_by(name: 'Graywolf Press'),
-    authors: [Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Fannie'), Author.find_by(first_name: 'Camille')]
+    authors: [Author.find_by(first_name: 'Hannah'), Author.find_by(first_name: 'Fannie'), Author.find_by(first_name: 'Camille')],
+    image_url: 'https://www.insidemydesk.com/comics/tim.jpg'
 )
 Book.create(title: 'The Underwater Welder', isbn_13: '9781603093989', publication_year: 2022, price: 3000,
     publisher: Publisher.find_by(name: 'McSweeney\'s'),
-    authors: [Author.find_by(first_name: 'Rainer')]
+    authors: [Author.find_by(first_name: 'Rainer')],
+    image_url: 'https://m.media-amazon.com/images/I/91+XkroXM0L.jpg'
 )
 
 
