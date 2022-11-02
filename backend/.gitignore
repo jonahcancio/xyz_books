@@ -34,5 +34,5 @@
 
 #ignore frontend build except robots.txt to keep folder
 /public/frontend/*
-!/public/frontend/robots.txt
+!/public/robots.txt
 
