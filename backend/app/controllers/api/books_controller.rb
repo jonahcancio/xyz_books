@@ -36,6 +36,34 @@ class Api::BooksController < ApplicationController
     render json: @book
   end
 
+  # GET /books/convert
+  def convert
+    isbn = BooksService.trim_isbn(params[:isbn])
+    if !isbn
+      return render json: {
+        error: "Missing query parameter: isbn"
+      }, status: 400
+    elsif BooksService.is_isbn13(isbn)
+      logger.info "ISBN-13 received"
+      isbn_13 = isbn
+      isbn_10 = BooksService.convert_isbn13_to_10(isbn)
+    elsif BooksService.is_isbn10(isbn)
+      logger.info "ISBN-10 received"
+      isbn_10 = isbn
+      isbn_13 = BooksService.convert_isbn10_to_13(isbn)
+    else
+      logger.info "Invalid ISBN input"
+      return render json: {
+        error: "Invalid ISBN input"
+      }, status: 400
+    end
+
+    render json: {
+      isbn_13: isbn_13,
+      isbn_10: isbn_10
+    }
+  end
+
   # GET /books/1
   def show
     render json: @book
