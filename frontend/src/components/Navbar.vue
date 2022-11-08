@@ -2,15 +2,15 @@
   <div id="navbar">
     <div class="top-banner">
       <b-img src="@/assets/26.svg" class="img-flip" />
-      <span class="mx-2"
+      <span class="mx-lg-2"
         >Save up to $500 per year on millions of book titles!</span
       ><b-img src="@/assets/26.svg" />
     </div>
     <b-navbar type="light" variant="faded" class="navbar-main">
-      <b-navbar-brand :to="{ name: 'home' }">
+      <b-navbar-brand :to="{ name: 'home' }"  v-responsive.lg.xl>
         <b-img src="@/assets/sample logo.svg" fluid alt="sample logo"></b-img>
       </b-navbar-brand>
-      <b-navbar-nav class="ml-5">
+      <b-navbar-nav class="ml-xl-5">
         <b-nav-form @submit.prevent="trySearch">
           <b-form-group
             :state="isValidIsbn"
@@ -31,7 +31,7 @@
       </b-navbar-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-navbar-nav>
+        <b-navbar-nav v-responsive.lg.xl >
           <b-nav-item :to="{ name: 'home' }"> Home </b-nav-item>
           <b-nav-item href="#"> Rent Textbooks </b-nav-item>
           <b-nav-item href="#"> Buy Textbooks </b-nav-item>
@@ -108,6 +108,10 @@ export default {
 </script>
 
 <style lang="less">
+@md: ~"(min-width: 768px)";
+@lg: ~"(min-width: 992px)";
+
+
 #navbar {
   .top-banner {
     padding-top: 0.5rem;
@@ -124,8 +128,10 @@ export default {
   }
 
   .navbar-main {
-    padding-left: 6rem;
-    padding-right: 6rem;
+    @media @lg {
+      padding-left: 6rem;
+      padding-right: 6rem;
+    }
   }
 
   .v-divider {
@@ -140,9 +146,9 @@ export default {
   }
 
   .search-icon {
-    position: relative;
-    left: 25px;
-    top: 2px;
+    position: absolute;
+    left: 0.75rem;
+    top: 0.4rem;
   }
 
   .search-input {

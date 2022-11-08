@@ -1,7 +1,7 @@
 <template>
   <b-container fluid id="footer">
     <b-row class="footer-row">
-      <b-col cols="4" class="footer-col-1">
+      <b-col sm="4" class="footer-col-1">
         <b-img src="../assets/sample logo.svg" fluid class="mb-4"></b-img>
         <p class="mb-5">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -16,14 +16,14 @@
           />
         </b-form-group>
       </b-col>
-      <b-col cols="2">
+      <b-col sm="2">
         <h4>Menu</h4>
         <div><b-link>Shop All</b-link></div>
         <div><b-link>About Us</b-link></div>
         <div><b-link>Community</b-link></div>
         <div><b-link>FAQs</b-link></div>
       </b-col>
-      <b-col cols="2">
+      <b-col sm="2">
         <h4>Support</h4>
         <div><b-link>Shipping & Returns</b-link></div>
         <div><b-link>Help & FAQ</b-link></div>
@@ -32,7 +32,7 @@
         <div><b-link>Contact</b-link></div>
         <div><b-link>Login</b-link></div>
       </b-col>
-      <b-col cols="2">
+      <b-col sm="2">
         <h4>Resources</h4>
         <div><b-link>Shipping & Returns</b-link></div>
         <div><b-link>Help & FAQ</b-link></div>
@@ -41,7 +41,7 @@
         <div><b-link>Contact</b-link></div>
         <div><b-link>Login</b-link></div>
       </b-col>
-      <b-col cols="2" class="footer-col-5">
+      <b-col sm="2" class="footer-col-5">
         <b-button class="msg-button">
           <b-img src="@/assets/Path 335.svg" />
         </b-button>

@@ -2,7 +2,7 @@
   <b-container fluid id="home-view">
     <div class="top-bg">
       <b-row>
-        <b-col cols="5" class="vertical-center get-started-text">
+        <b-col lg="5" class="vertical-center get-started-text">
           <h1 class="mb-4 cheapest">The Cheapest Textbooks</h1>
           <h4 class="save-up mb-3">Save Up To 90% On Millions Of Titles</h4>
           <p class="mb-3">
@@ -15,15 +15,15 @@
             >
           </div>
         </b-col>
-        <b-col cols="7" class="text-center p-5">
+        <b-col lg="7" class="text-center p-5">
           <b-img src="@/assets/hero illustration.svg" class="w-100 mr-5" />
         </b-col>
       </b-row>
       <b-row>
-        <b-col cols="6" class="text-center p-5">
+        <b-col lg="6" class="text-center p-5">
           <b-img src="@/assets/Group 13597.png" class="w-100 ml-5" />
         </b-col>
-        <b-col cols="6" class="text-white vertical-center learn-more-text">
+        <b-col lg="6" class="text-white vertical-center learn-more-text">
           <h2 class="mb-4 commitment">Our Commitment</h2>
           <p class="mb-4">
             Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
@@ -41,27 +41,27 @@
       </div>
       <b-row class="trusted-clients text-white">
         <b-col>
-          <b-img src="@/assets/Group 13703.svg" class="mr-2" />
+          <b-img src="@/assets/Group 13703.svg" class="mr-lg-2 mr-md-1" />
           <span>Binance</span>
         </b-col>
         <b-col>
-          <b-img src="@/assets/Layer_x0020_1.svg" class="mr-2" />
+          <b-img src="@/assets/Layer_x0020_1.svg" class="mr-lg-2 mr-md-1" />
           <span>Bitcoin</span>
         </b-col>
         <b-col>
-          <b-img src="@/assets/solana-sol-logo.svg" class="mr-2" />
+          <b-img src="@/assets/solana-sol-logo.svg" class="mr-lg-2 mr-md-1" />
           <span>Solana</span>
         </b-col>
         <b-col>
-          <b-img src="@/assets/Ethereum.svg" class="mr-2" />
+          <b-img src="@/assets/Ethereum.svg" class="mr-lg-2 mr-md-1" />
           <span>Ethereum</span>
         </b-col>
         <b-col>
-          <b-img src="@/assets/tether-usdt-logo.svg" class="mr-2" />
+          <b-img src="@/assets/tether-usdt-logo.svg" class="mr-lg-2 mr-md-1" />
           <span>Tether</span>
         </b-col>
         <b-col>
-          <b-img src="@/assets/Layer 2.svg" class="mr-2" />
+          <b-img src="@/assets/Layer 2.svg" class="mr-lg-2 mr-md-1" />
           <span>XRP</span>
         </b-col>
       </b-row>
@@ -78,7 +78,7 @@
         </p>
       </div>
       <b-row class="explore-books">
-        <b-col>
+        <b-col lg="4">
           <b-card border-variant="light" class="text-center mb-3 book-card">
             <b-card-img src="@/assets/doughnuts & Doom.png"></b-card-img>
           </b-card>
@@ -90,7 +90,7 @@
             </h5>
           </b-link>
         </b-col>
-        <b-col>
+        <b-col lg="4">
           <b-card border-variant="light" class="text-center mb-3 book-card">
             <b-card-img src="@/assets/The Bend of Luck.png"></b-card-img>
           </b-card>
@@ -102,7 +102,7 @@
             </h5>
           </b-link>
         </b-col>
-        <b-col>
+        <b-col lg="4">
           <b-card border-variant="light" class="text-center mb-3 book-card">
             <b-card-img src="@/assets/The Underwater Welder.png"></b-card-img>
           </b-card>
@@ -119,7 +119,7 @@
         <div class="text-warning text-uppercase"><h6>Lorem ipsum</h6></div>
         <div class="text-white mb-5"><h1>3 Reasons to shop with us</h1></div>
         <b-row>
-          <b-col>
+          <b-col lg="4">
             <b-img
               src="@/assets/package-box.svg"
               class="mb-3 reason-img"
@@ -133,7 +133,7 @@
               gubergren, no sea takimata.
             </p>
           </b-col>
-          <b-col>
+          <b-col lg="4">
             <b-img src="@/assets/help.svg" class="mb-3 reason-img"></b-img>
             <h2 class="mb-3">Dedicated customer support and help portal.</h2>
             <p class="">
@@ -142,7 +142,7 @@
               gubergren, no sea takimata.
             </p>
           </b-col>
-          <b-col>
+          <b-col lg="4">
             <b-img
               src="@/assets/piggy-bank.svg"
               class="mb-3 reason-img"
@@ -288,6 +288,10 @@ export default {
 </script>
 
 <style lang="less">
+@md: ~"(min-width: 768px)";
+@lg: ~"(min-width: 992px)";
+@xl: ~"(min-width: 1200px)";
+
 #home-view {
   .top-bg {
     background-image: url("@/assets/banner bg.png");
@@ -337,8 +341,16 @@ export default {
     }
 
     .trusted-clients {
-      padding-left: 12.5rem;
-      padding-right: 12.5rem;
+      @media @lg {
+        padding-left: 12.5rem;
+        padding-right: 12.5rem;
+      }
+
+      @media @md {
+        padding-left: 4rem;
+        padding-right: 4rem;
+      }
+
       font-size: 1.4rem;
       height: 4rem;
       align-items: center;
@@ -347,15 +359,57 @@ export default {
 
   .mid-bg {
     padding-top: 6rem;
+
     background-image: linear-gradient(
       -2deg,
       white,
-      white 28%,
-      #061a36 28.25%,
-      #061a36 70%,
-      white 70.25%,
+      white 16%,
+      #061a36 16.25%,
+      #061a36 90%,
+      white 90.25%,
       white
     );
+
+    @media @md {
+      background-image: linear-gradient(
+        -2deg,
+        white,
+        white 12%,
+        #061a36 12.25%,
+        #061a36 90%,
+        white 90.25%,
+        white
+      );
+    }
+
+
+    @media @lg {
+      background-image: linear-gradient(
+        -2deg,
+        white,
+        white 28%,
+        #061a36 28.25%,
+        #061a36 80%,
+        white 80.25%,
+        white
+      );
+    }
+
+    @media @xl {
+      background-image: linear-gradient(
+        -2deg,
+        white,
+        white 28%,
+        #061a36 28.25%,
+        #061a36 70%,
+        white 70.25%,
+        white
+      );
+    }
+
+
+
+
 
     .explore-books {
       padding: 1rem 8rem;
@@ -407,8 +461,15 @@ export default {
 
       .rating-card-container {
         margin-top: 6rem;
-        padding-left: 24rem;
-        padding-right: 24rem;
+        @media @xl {
+          padding-left: 24rem;
+          padding-right: 24rem;
+        }
+
+        @media @lg {
+          padding-left: 12rem;
+          padding-right: 12rem;
+        }
 
         .rating-card {
           border-radius: 0.75rem;
@@ -432,8 +493,10 @@ export default {
   }
 
   .faq-jumbo {
-    padding-left: 26rem;
-    padding-right: 26rem;
+    @media @xl {
+      padding-left: 26rem;
+      padding-right: 26rem;
+    }
 
     .faq-header {
       display: flex;
