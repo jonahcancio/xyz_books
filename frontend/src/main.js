@@ -1,26 +1,29 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
 
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 
 // Import Bootstrap and BootstrapVue CSS files (order is important)
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
 // Make BootstrapVue available throughout your project
-Vue.use(BootstrapVue)
+Vue.use(BootstrapVue);
 // Optionally install the BootstrapVue icon components plugin
-Vue.use(IconsPlugin)
+Vue.use(IconsPlugin);
 
-import axios from 'axios'
-axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL
+import axios from "axios";
+axios.defaults.baseURL = process.env.VUE_APP_API_BASE_URL;
 Vue.prototype.$axios = axios;
 
-import router from './router'
+import responsive from "vue-responsive";
+Vue.use(responsive);
 
-Vue.config.productionTip = false
+import router from "./router";
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: (h) => h(App),
+}).$mount("#app");
