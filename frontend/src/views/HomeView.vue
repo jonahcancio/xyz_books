@@ -382,7 +382,6 @@ export default {
       );
     }
 
-
     @media @lg {
       background-image: linear-gradient(
         -2deg,
@@ -407,10 +406,6 @@ export default {
       );
     }
 
-
-
-
-
     .explore-books {
       padding: 1rem 8rem;
       margin-bottom: 7rem;
@@ -425,9 +420,11 @@ export default {
     }
 
     .shop-reasons {
-      padding-left: 6rem;
-      padding-right: 12rem;
-      padding-bottom: 10rem;
+      @media @lg {
+        padding: 1rem 12rem 10rem 6rem;
+      }
+
+      padding: 0.5rem 2rem 1rem;
 
       .reason-img {
         height: 4rem;
